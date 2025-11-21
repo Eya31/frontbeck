@@ -1,0 +1,147 @@
+<div class="register-container">
+  <div class="register-card">
+    <div class="register-header">
+      <h1>SGII-Ville</h1>
+      <p>Créer un nouveau compte</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="register-form">
+      <h2>Inscription</h2>
+
+      <!-- Sélection du rôle -->
+      <div class="form-group">
+        <label for="role">Rôle *</label>
+        <select 
+          id="role" 
+          name="role"
+          [(ngModel)]="registerData.role"
+          required
+          [disabled]="isLoading"
+        >
+          <option *ngFor="let role of roles" [value]="role.value">
+            {{ role.label }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Nom -->
+      <div class="form-group">
+        <label for="nom">Nom complet *</label>
+        <input 
+          type="text" 
+          id="nom" 
+          name="nom"
+          [(ngModel)]="registerData.nom"
+          placeholder="Entrez votre nom complet"
+          required
+          [disabled]="isLoading"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email"
+          [(ngModel)]="registerData.email"
+          placeholder="exemple@email.com"
+          required
+          [disabled]="isLoading"
+        />
+      </div>
+
+      <!-- Mot de passe -->
+      <div class="form-group">
+        <label for="password">Mot de passe *</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password"
+          [(ngModel)]="registerData.motDePasse"
+          placeholder="Minimum 6 caractères"
+          required
+          [disabled]="isLoading"
+        />
+      </div>
+
+      <!-- Confirmation mot de passe -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirmer le mot de passe *</label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          name="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          placeholder="Répétez le mot de passe"
+          required
+          [disabled]="isLoading"
+        />
+      </div>
+
+      <!-- Champs spécifiques pour CITOYEN -->
+      <div *ngIf="isCitoyen">
+        <div class="form-group">
+          <label for="adresse">Adresse *</label>
+          <input 
+            type="text" 
+            id="adresse" 
+            name="adresse"
+            [(ngModel)]="registerData.adresse"
+            placeholder="Votre adresse complète"
+            [disabled]="isLoading"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone *</label>
+          <input 
+            type="tel" 
+            id="telephone" 
+            name="telephone"
+            [(ngModel)]="registerData.telephone"
+            placeholder="12345678 (8 chiffres)"
+            pattern="[0-9]{8}"
+            [disabled]="isLoading"
+          />
+        </div>
+      </div>
+
+      <!-- Champs spécifiques pour CHEF_SERVICE -->
+      <div *ngIf="isChefService">
+        <div class="form-group">
+          <label for="departement">Département *</label>
+          <input 
+            type="text" 
+            id="departement" 
+            name="departement"
+            [(ngModel)]="registerData.departement"
+            placeholder="Ex: Voirie, Éclairage public..."
+            [disabled]="isLoading"
+          />
+        </div>
+      </div>
+
+      <!-- Message d'erreur -->
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Bouton submit -->
+      <button 
+        type="submit" 
+        class="btn-primary"
+        [disabled]="isLoading"
+      >
+        <span *ngIf="!isLoading">S'inscrire</span>
+        <span *ngIf="isLoading">Inscription en cours...</span>
+      </button>
+
+      <!-- Lien vers login -->
+      <div class="form-footer">
+        <p>Vous avez déjà un compte ? <a routerLink="/login">Se connecter</a></p>
+      </div>
+    </form>
+  </div>
+</div>

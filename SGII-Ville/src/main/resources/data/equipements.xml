@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Equipements xmlns="http://example.com/gestion-interventions">
+    
+    <Equipement>
+        <id>1</id>
+        <type>perceuse</type>
+        <etat>FONCTIONNEL</etat>
+        <valeurAchat>0</valeurAchat>
+        <fournisseur>
+            <id>1</id>
+            <nom>Fournisseur Standard</nom>
+            <contact>contact@fournisseur.tn</contact>
+            <telephone>+216 70 000 000</telephone>
+        </fournisseur>
+        <localisation>
+            <latitude>36.8065</latitude>
+            <longitude>10.1815</longitude>
+        </localisation>
+    </Equipement>
+</Equipements>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Interventions xmlns="http://example.com/gestion-interventions">
+                                        
+
+    <Intervention>
+        <id>1</id>
+        <priorite>PLANIFIEE</priorite>
+        <etat>EN_ATTENTE</etat>
+        <datePlanifiee>2025-11-28</datePlanifiee>
+        <budget>800.00</budget>
+        <technicienId>0</technicienId>
+        <demandeId>9</demandeId>
+    </Intervention>
+</Interventions>

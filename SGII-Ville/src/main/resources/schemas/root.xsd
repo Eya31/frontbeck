@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://example.com/gestion-interventions" 
+           xmlns:tns="http://example.com/gestion-interventions" 
+           elementFormDefault="qualified">
+
+  <!-- Imports de tous les types -->
+  <xs:include schemaLocation="entities/utilisateurs.xsd"/>
+  <xs:include schemaLocation="entities/demandes.xsd"/>
+  <xs:include schemaLocation="entities/interventions.xsd"/>
+  <xs:include schemaLocation="entities/fournisseurs.xsd"/>
+  <xs:include schemaLocation="entities/equipements.xsd"/>
+  <xs:include schemaLocation="entities/ressources.xsd"/>
+  <xs:include schemaLocation="entities/maindoeuvre.xsd"/>
+  <xs:include schemaLocation="workflow/notifications.xsd"/>
+  <xs:include schemaLocation="workflow/demandesAjout.xsd"/>
+
+  <!-- Élément racine -->
+  <xs:element name="SystemeGestionInterventions">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="Utilisateurs" minOccurs="0">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="Citoyen" type="tns:CitoyenType"/>
+              <xs:element name="Technicien" type="tns:TechnicienType"/>
+              <xs:element name="ChefDeService" type="tns:ChefDeServiceType"/>
+              <xs:element name="Administrateur" type="tns:AdministrateurType"/>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Demandes" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Demande" type="tns:DemandeType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Interventions" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Intervention" type="tns:InterventionType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Fournisseurs" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Fournisseur" type="tns:FournisseurType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Equipements" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Equipement" type="tns:EquipementType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="RessourcesMaterielles" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RessourceMaterielle" type="tns:RessourceMaterielleType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="MainDOeuvre" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ouvrier" type="tns:MainDOeuvreType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Notifications" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Notification" type="tns:NotificationType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="DemandesAjout" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DemandeAjout" type="tns:DemandeAjoutType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

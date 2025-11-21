@@ -1,0 +1,127 @@
+<!-- demande-form.component.html -->
+<div class="wizard-container">
+  <div class="wizard-header">
+    <h2>Nouvel Incident</h2>
+    <div class="progress-bar-container" *ngIf="step <= totalSteps">
+      <div class="progress-fill" [style.width.%]="(step/totalSteps)*100"></div>
+    </div>
+    <p *ngIf="step <= totalSteps">Étape {{step}} sur {{totalSteps}}</p>
+  </div>
+
+  <div *ngIf="step === totalSteps + 1" class="success-screen">
+    <div class="icon">✅</div>
+    <h3>Signalement Enregistré !</h3>
+    <p>Votre numéro de suivi est :</p>
+    <div class="ticket-id">{{ ticketId }}</div>
+    <p class="info">Un récapitulatif a été envoyé à votre adresse si fournie.</p>
+    <button class="btn btn-primary" (click)="resetForm()">Nouveau signalement</button>
+  </div>
+
+  <form *ngIf="step <= totalSteps" (ngSubmit)="submit()">
+
+    <div *ngIf="step === 1" class="step-content">
+      <h3>📍 Où est le problème ?</h3>
+
+      <div class="geo-box">
+        <button type="button" class="btn btn-outline" (click)="geolocate()">
+          🎯 Utiliser ma position GPS
+        </button>
+        <div *ngIf="demande.localisation.latitude">
+          Lat: {{demande.localisation.latitude | number:'1.4-4'}}
+          Lon: {{demande.localisation.longitude | number:'1.4-4'}}
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div leaflet [leafletOptions]="mapOptions" (leafletMapReady)="onMapReady($event)" [leafletLayers]="layers"></div>
+      </div>
+      <p class="map-hint">Cliquez sur la carte pour sélectionner l'emplacement exact (ou déplacez le marqueur).</p>
+
+      <div class="form-group">
+        <label>Ou adresse précise (optionnel) :</label>
+        <input type="text" [(ngModel)]="demande.localisation.address" name="addr"
+               placeholder="Ex: 12 Avenue Habib Bourguiba" class="form-control">
+      </div>
+    </div>
+
+    <div *ngIf="step === 2" class="step-content">
+      <h3>📂 Type d'incident</h3>
+      <div class="form-group">
+        <label>Catégorie *</label>
+        <select [(ngModel)]="demande.category" name="cat" class="form-control" required>
+          <option value="" disabled selected>Sélectionner...</option>
+          <option *ngFor="let c of categories" [value]="c">{{c}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Précision (Optionnel)</label>
+        <input type="text" [(ngModel)]="demande.subCategory" name="sub" placeholder="Ex: Nid de poule" class="form-control">
+      </div>
+    </div>
+
+    <div *ngIf="step === 3" class="step-content">
+      <h3>📝 Détails</h3>
+      <div class="form-group">
+        <label>Description * (Min 10 caractères)</label>
+        <textarea [(ngModel)]="demande.description" name="desc" rows="5" class="form-control" required minlength="10"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Gravité estimée</label>
+        <select [(ngModel)]="demande.priority" name="prio" class="form-control">
+          <option *ngFor="let p of priorites" [value]="p.value">{{p.label}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div *ngIf="step === 4" class="step-content">
+      <h3>📸 Preuves (Photos)</h3>
+      <div class="upload-box">
+        <input type="file" multiple accept="image/jpeg,image/png,audio/*" (change)="onFileSelected($event)">
+        <p class="hint">Maximum 5 fichiers (JPG/PNG images, audio max 30s). Chaque fichier ≤ 8Mo.</p>
+      </div>
+
+      <div *ngIf="fileError" class="error-msg">{{fileError}}</div>
+
+      <ul *ngIf="selectedFiles.length > 0" class="file-list">
+        <li *ngFor="let f of selectedFiles">📄 {{f.name}}</li>
+      </ul>
+    </div>
+
+    <div *ngIf="step === 5" class="step-content">
+      <h3>🚀 Confirmation</h3>
+
+      <div class="recap">
+        <p><strong>Lieu :</strong> {{ demande.localisation.address || (demande.localisation.latitude + ',' + demande.localisation.longitude) }}</p>
+        <p><strong>Type :</strong> {{ demande.category }}</p>
+        <p><strong>Fichiers :</strong> {{ selectedFiles.length }}</p>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" [(ngModel)]="demande.isAnonymous" name="anon">
+          Soumission anonyme
+        </label>
+      </div>
+
+      <div class="form-group" *ngIf="demande.isAnonymous">
+        <label>Email de suivi (Obligatoire) *</label>
+        <input type="email" [(ngModel)]="demande.contactEmail" name="email" class="form-control" required>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-msg">{{errorMessage}}</div>
+    </div>
+
+    <div class="wizard-actions">
+      <button type="button" class="btn btn-secondary" (click)="prevStep()" [disabled]="step === 1">Retour</button>
+
+      <button type="button" class="btn btn-primary" (click)="nextStep()" *ngIf="step < totalSteps" [disabled]="!validateStep(step)">
+        Suivant
+      </button>
+
+      <button type="submit" class="btn btn-success" *ngIf="step === totalSteps" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Envoyer...' : 'Confirmer' }}
+      </button>
+    </div>
+
+  </form>
+</div>

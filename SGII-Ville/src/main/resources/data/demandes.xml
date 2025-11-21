@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Demandes xmlns="http://example.com/gestion-interventions">
+                                                        
+
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Demande>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <id>7</id>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <description>oooooooooooooooooooooooooooooooooooooooo</description>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <dateSoumission>2025-11-20</dateSoumission>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <etat>TRAITEE</etat>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <category>Eau &amp; Assainissement</category>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <subCategory/>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <priority>LOW</priority>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <contactEmail/>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <localisation>
+                                                                                                                        
+            
+            
+            
+            
+            
+            
+            
+            
+            <latitude>34.79131</latitude>
+                                                                                                                        
+            
+            
+            
+            
+            
+            
+            
+            
+            <longitude>10.727278</longitude>
+                                                                                                                        
+            
+            
+            
+            
+            
+            
+            
+            
+            <address>Markaz Kammoun, Bouzaiane, Délégation Sfax Sud, Gouvernorat Sfax, 3022, Tunisie</address>
+                                                                                                                    
+        
+        
+        
+        
+        
+        
+        
+        
+        </localisation>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <attachments>
+                                                                                                                        
+            
+            
+            
+            
+            
+            
+            
+            
+            <photoRef>
+                                                                                                                                                                
+                
+                
+                
+                
+                
+                
+                
+                
+                <id_photo>1</id_photo>
+                                                                                                                                                            
+            
+            
+            
+            
+            
+            
+            
+            
+            </photoRef>
+                                                                                                                    
+        
+        
+        
+        
+        
+        
+        
+        
+        </attachments>
+                                                                            
+    
+    
+    
+    
+    
+    
+    
+    
+    </Demande>
+                                    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Demande>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <id>8</id>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <description>ggggggggggggggggggggggggggggggggggggggggg</description>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <dateSoumission>2025-11-20</dateSoumission>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <etat>TRAITEE</etat>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <category>Déchets</category>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <subCategory/>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <priority>LOW</priority>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <contactEmail/>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <localisation>
+                                                                                                            
+            
+            
+            
+            
+            
+            
+            
+            <latitude>34.79134</latitude>
+                                                                                                            
+            
+            
+            
+            
+            
+            
+            
+            <longitude>10.727308</longitude>
+                                                                                                            
+            
+            
+            
+            
+            
+            
+            
+            <address>Markaz Kammoun, Bouzaiane, Délégation Sfax Sud, Gouvernorat Sfax, 3022, Tunisie</address>
+                                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        </localisation>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <attachments>
+                                                                                                            
+            
+            
+            
+            
+            
+            
+            
+            <photoRef>
+                                                                                                                                                
+                
+                
+                
+                
+                
+                
+                
+                <id_photo>1</id_photo>
+                                                                                                                                            
+            
+            
+            
+            
+            
+            
+            
+            </photoRef>
+                                                                                                        
+        
+        
+        
+        
+        
+        
+        
+        </attachments>
+                                                                    
+    
+    
+    
+    
+    
+    
+    
+    </Demande>
+                                
+    
+    
+    
+    
+    
+    
+    
+    <Demande>
+                                                                
+        
+        
+        
+        
+        
+        
+        <id>9</id>
+                                                                
+        
+        
+        
+        
+        
+        
+        <description>eyaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</description>
+                                                                
+        
+        
+        
+        
+        
+        
+        <dateSoumission>2025-11-20</dateSoumission>
+                                                                
+        
+        
+        
+        
+        
+        
+        <etat>TRAITEE</etat>
+                                                                
+        
+        
+        
+        
+        
+        
+        <category>Eau &amp; Assainissement</category>
+                                                                
+        
+        
+        
+        
+        
+        
+        <subCategory/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <priority>HIGH</priority>
+                                                                
+        
+        
+        
+        
+        
+        
+        <contactEmail/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <localisation>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <latitude>34.791393</latitude>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <longitude>10.727337</longitude>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <address>Markaz Kammoun, Bouzaiane, Délégation Sfax Sud, Gouvernorat Sfax, 3022, Tunisie</address>
+                                                                                            
+        
+        
+        
+        
+        
+        
+        </localisation>
+                                                                
+        
+        
+        
+        
+        
+        
+        <attachments>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <photoRef>
+                                                                                                                                
+                
+                
+                
+                
+                
+                
+                <id_photo>1</id_photo>
+                                                                                                                            
+            
+            
+            
+            
+            
+            
+            </photoRef>
+                                                                                            
+        
+        
+        
+        
+        
+        
+        </attachments>
+                                                            
+    
+    
+    
+    
+    
+    
+    </Demande>
+                 
+    
+    <Demande>
+                                                                
+        
+        
+        
+        
+        
+        
+        <id>12</id>
+                                                                
+        
+        
+        
+        
+        
+        
+        <description>salaaah</description>
+                                                                
+        
+        
+        
+        
+        
+        
+        <dateSoumission>2025-11-20</dateSoumission>
+                                                                
+        
+        
+        
+        
+        
+        
+        <etat>TRAITEE</etat>
+                                                                
+        
+        
+        
+        
+        
+        
+        <category>Eau &amp; Assainissement</category>
+                                                                
+        
+        
+        
+        
+        
+        
+        <subCategory/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <priority>HIGH</priority>
+                                                                
+        
+        
+        
+        
+        
+        
+        <contactEmail/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <localisation>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <latitude>34.791393</latitude>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <longitude>10.727337</longitude>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <address>Markaz Kammoun, Bouzaiane, Délégation Sfax Sud, Gouvernorat Sfax, 3022, Tunisie</address>
+                                                                                            
+        
+        
+        
+        
+        
+        
+        </localisation>
+                                                                
+        
+        
+        
+        
+        
+        
+        <attachments>
+                                                                                                
+            
+            
+            
+            
+            
+            
+            <photoRef>
+                                                                                                                                
+                
+                
+                
+                
+                
+                
+                <id_photo>1</id_photo>
+                                                                                                                            
+            
+            
+            
+            
+            
+            
+            </photoRef>
+                                                                                            
+        
+        
+        
+        
+        
+        
+        </attachments>
+                                                            
+    
+    
+    
+    
+    
+    
+    </Demande>
+                   
+
+
+
+    <Demande>
+                                                        
+        
+        
+        
+        
+        
+        <id>15</id>
+                                                        
+        
+        
+        
+        
+        
+        <description>ahmed</description>
+                                                        
+        
+        
+        
+        
+        
+        <dateSoumission>2025-10-31</dateSoumission>
+                                                        
+        
+        
+        
+        
+        
+        <etat>EN_ATTENTE</etat>
+                                                        
+        
+        
+        
+        
+        
+        <category>Eau &amp; Assainissement</category>
+                                                        
+        
+        
+        
+        
+        
+        <subCategory/>
+                                                        
+        
+        
+        
+        
+        
+        <priority>HIGH</priority>
+                                                        
+        
+        
+        
+        
+        
+        <contactEmail/>
+                                                        
+        
+        
+        
+        
+        
+        <localisation>
+                                                                                    
+            
+            
+            
+            
+            
+            <latitude>34.791393</latitude>
+                                                                                    
+            
+            
+            
+            
+            
+            <longitude>10.727337</longitude>
+                                                                                    
+            
+            
+            
+            
+            
+            <address>Markaz Kammoun, Bouzaiane, Délégation Sfax Sud, Gouvernorat Sfax, 3022, Tunisie</address>
+                                                                                
+        
+        
+        
+        
+        
+        </localisation>
+                                                        
+        
+        
+        
+        
+        
+        <attachments>
+                                                                                    
+            
+            
+            
+            
+            
+            <photoRef>
+                                                                                                                
+                
+                
+                
+                
+                
+                <id_photo>10</id_photo>
+                                                                                                            
+            
+            
+            
+            
+            
+            </photoRef>
+                                                                                
+        
+        
+        
+        
+        
+        </attachments>
+                                                    
+    
+    
+    
+    
+    
+    </Demande>
+    
+</Demandes>

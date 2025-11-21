@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://example.com/gestion-interventions" 
+           xmlns:tns="http://example.com/gestion-interventions" 
+           elementFormDefault="qualified">
+
+  <xs:include schemaLocation="../common/typesBase.xsd"/>
+  <xs:include schemaLocation="../common/geo.xsd"/>
+
+  <!-- Type Photo -->
+  <xs:complexType name="PhotoType">
+    <xs:sequence>
+      <xs:element name="id_photo" type="xs:int"/>
+      <xs:element name="url" type="xs:string"/>
+      <xs:element name="nom" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Demande citoyen -->
+  <xs:complexType name="DemandeType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element name="dateSoumission" type="xs:date"/>
+      <xs:element name="etat" type="tns:EtatDemandeType"/>
+      <xs:element name="photos" type="tns:PhotoType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="localisation" type="tns:GeoPointType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

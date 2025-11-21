@@ -1,0 +1,22 @@
+<div class="citoyen-dashboard">
+  <header>
+    <h1>Mes Demandes</h1>
+    <button class="btn-logout" (click)="logout()">Déconnexion</button>
+  </header>
+
+  <div class="actions">
+    <button class="btn-primary" (click)="showCreateForm = !showCreateForm">{{ showCreateForm ? 'Annuler' : 'Signaler un problème' }}</button>
+  </div>
+
+  <div *ngIf="showCreateForm" class="form-box">
+    <app-demande-form></app-demande-form>
+  </div>
+
+  <div class="demandes-list">
+    <div *ngFor="let d of demandes" class="demande-card">
+      <h3>Demande #{{d.id}}</h3>
+      <p>{{d.description}}</p>
+      <span class="status">{{d.etat}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Techniciens xmlns="http://example.com/gestion-interventions">
+  <Technicien>
+    <id>100</id>
+    <nom>Ahmed Ben Salah</nom>
+    <email>ahmed.technicien@ville.tn</email>
+    <motDePasse>$2a$10$3r3v3l0p3r3v3l0p3r3v3l0p3r3v</motDePasse>
+    <role>TECHNICIEN</role>
+    <competences>Électricité</competences>
+    <competences>Plomberie</competences>
+    <competences>Voirie</competences>
+    <disponibilite>true</disponibilite>
+  </Technicien>
+  <Technicien>
+    <id>101</id>
+    <nom>Karim Trabelsi</nom>
+    <email>karim.tech@ville.tn</email>
+    <motDePasse>$2a$10$3r3v3l0p3r3v3l0p3r3v3l0p3r3v</motDePasse>
+    <role>TECHNICIEN</role>
+    <competences>Éclairage public</competences>
+    <competences>Réseaux</competences>
+    <disponibilite>true</disponibilite>
+  </Technicien>
+  <Technicien>
+    <id>102</id>
+    <nom>Mohamed Amri</nom>
+    <email>mohamed.amri@ville.tn</email>
+    <motDePasse>$2a$10$3r3v3l0p3r3v3l0p3r3v3l0p3r3v</motDePasse>
+    <role>TECHNICIEN</role>
+    <competences>Peinture</competences>
+    <competences>Menuiserie</competences>
+    <disponibilite>false</disponibilite>
+  </Technicien>
+  <Technicien>
+    <id>103</id>
+    <nom>Sami Jouini</nom>
+    <email>sami.jouini@ville.tn</email>
+    <motDePasse>$2a$10$3r3v3l0p3r3v3l0p3r3v3l0p3r3v</motDePasse>
+    <role>TECHNICIEN</role>
+    <competences>Jardinage</competences>
+    <competences>Nettoyage urbain</competences>
+    <disponibilite>true</disponibilite>
+  </Technicien>
+</Techniciens>

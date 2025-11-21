@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Photos xmlns="http://example.com/gestion-interventions">
+            
+    
+    <Photo>
+                        
+        
+        <id_photo>1</id_photo>
+                        
+        
+        <url>/api/demandes/uploads/1763660269858_vv.png</url>
+                        
+        
+        <nom>vv.png</nom>
+                    
+    
+    </Photo>
+        
+    
+    <Photo>
+                
+        <id_photo>1</id_photo>
+                
+        <url>/api/demandes/uploads/1763661683746_invitation_soutenance.jpg</url>
+                
+        <nom>invitation soutenance.jpg</nom>
+            
+    </Photo>
+    
+    <Photo>
+        <id_photo>1</id_photo>
+        <url>/api/demandes/uploads/1763662033893_tweet_capture.png</url>
+        <nom>tweet_capture.png</nom>
+    </Photo>
+</Photos>

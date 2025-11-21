@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/gestion-interventions"
+           xmlns:tns="http://example.com/gestion-interventions"
+           elementFormDefault="qualified">
+
+  <!-- On inclut ton typesBase.xsd existant (inchangé) -->
+  <xs:include schemaLocation="../common/typesBase.xsd"/>
+
+  <!-- On RÉ-ÉCRIT le type UtilisateurType ICI (même si déjà ailleurs) -->
+  <!-- Cela évite l'erreur sans toucher à typesBase.xsd -->
+  <xs:complexType name="UtilisateurType" abstract="true">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="motDePasse" type="xs:string"/>
+      <xs:element name="role" type="tns:RoleType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Maintenant TechnicienType peut étendre UtilisateurType sans erreur -->
+  <xs:complexType name="TechnicienType">
+    <xs:complexContent>
+      <xs:extension base="tns:UtilisateurType">
+        <xs:sequence>
+          <xs:element name="competences" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="disponibilite" type="xs:boolean" default="true"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Liste des techniciens -->
+  <xs:element name="Techniciens">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Technicien" type="tns:TechnicienType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

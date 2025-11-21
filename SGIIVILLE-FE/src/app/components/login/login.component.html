@@ -1,0 +1,65 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>SGII-Ville</h1>
+      <p>Système de Gestion Intelligente des Interventions</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="login-form">
+      <h2>Connexion</h2>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email"
+          [(ngModel)]="credentials.email"
+          placeholder="Entrez votre email"
+          required
+          [disabled]="isLoading"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password"
+          [(ngModel)]="credentials.motDePasse"
+          placeholder="Entrez votre mot de passe"
+          required
+          [disabled]="isLoading"
+        />
+      </div>
+
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <button 
+        type="submit" 
+        class="btn-primary"
+        [disabled]="isLoading"
+      >
+        <span *ngIf="!isLoading">Se connecter</span>
+        <span *ngIf="isLoading">Connexion en cours...</span>
+      </button>
+
+      <div class="form-footer">
+        <p>Pas encore de compte ? <a routerLink="/register">S'inscrire</a></p>
+      </div>
+    </form>
+
+    <div class="role-info">
+      <h3>Accès par rôle</h3>
+      <ul>
+        <li><strong>👤 Citoyen :</strong> Soumettre et suivre vos demandes</li>
+        <li><strong>🔧 Technicien :</strong> Gérer les interventions assignées</li>
+        <li><strong>👔 Chef de service :</strong> Planifier les interventions</li>
+        <li><strong>🛡️ Administrateur :</strong> Gérer le système</li>
+      </ul>
+    </div>
+  </div>
+</div>

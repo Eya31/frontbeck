@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Liste des Interventions ({{ interventions.length }})</h2>
+  <button (click)="loadInterventions()" class="btn-refresh">Rafraîchir</button>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Priorité</th>
+          <th>État</th>
+          <th>Date Planification</th>
+          <th>Budget</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let intervention of interventions">
+          <td>{{ intervention.id }}</td>
+          <td>
+            <span [class]="getPrioriteClass(intervention.priorite)">
+              {{ intervention.priorite }}
+            </span>
+          </td>
+          <td>
+            <span [class]="getStatutClass(intervention.etat)">
+              {{ intervention.etat }}
+            </span>
+          </td>
+          <td>{{ intervention.datePlanifiee | date:'dd/MM/yyyy' }}</td>
+          <td>{{ intervention.budget | currency:'EUR' }}</td>
+          <td class="actions">
+            <button (click)="changerStatut(intervention.id, 'EN_COURS')"
+                    [disabled]="intervention.etat === 'EN_COURS' || intervention.etat === 'TERMINEE'"
+                    class="btn-start">
+              Démarrer
+            </button>
+            <button (click)="changerStatut(intervention.id, 'TERMINEE')"
+                    [disabled]="intervention.etat !== 'EN_COURS'"
+                    class="btn-complete">
+              Terminer
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="interventions.length === 0">
+          <td colspan="6" class="no-data">Aucune intervention planifiée</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

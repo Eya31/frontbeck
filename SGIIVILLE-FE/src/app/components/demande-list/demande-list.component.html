@@ -1,0 +1,80 @@
+<div class="container">
+  <h1>Gestion des demandes</h1>
+  <h2>Demandes ({{ demandes.length }})</h2>
+
+  <div class="grid">
+    <div class="card" *ngFor="let demande of demandes" [class.traitee]="demande.etat === 'TRAITEE'">
+      <h3>{{ demande.description | slice:0:50 }}...</h3> <!-- Use slice pipe instead of truncate -->
+      <p *ngIf="demande.localisation">
+        <strong>Localisation:</strong> {{ demande.localisation.latitude }}, {{ demande.localisation.longitude }}
+      </p>
+      <p><strong>Citoyen:</strong> {{ demande.citoyenId || 'N/A' }}</p>
+      <p><strong>Date:</strong> {{ demande.dateSoumission | date:'medium' }}</p> <!-- Ajoute heure -->
+      <p><strong>État:</strong>
+        <span [class]="demande.etat === 'TRAITEE' ? 'status-traitee' : 'status-active'">
+          {{ demande.etat }}
+        </span>
+      </p>
+      <div class="card-actions">
+        <button (click)="voirDetails(demande)" class="btn-details">Voir détails</button>
+        <button (click)="planifier(demande)"
+                [disabled]="demande.etat === 'TRAITEE'"
+                class="btn-planifier">
+          {{ demande.etat === 'TRAITEE' ? 'Déjà traitée' : 'Planifier' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de planification -->
+  <div class="modal-overlay" *ngIf="showForm && selectedDemande">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Planifier l'intervention</h2>
+      </div>
+      <div class="modal-content">
+        <p><strong>Demande:</strong> {{ selectedDemande.description }}</p>
+        <p *ngIf="selectedDemande.localisation">
+          <strong>Localisation:</strong> {{ selectedDemande.localisation.latitude }}, {{ selectedDemande.localisation.longitude }}
+        </p>
+        <p>La priorité sera fixée à <strong>URGENTE</strong></p>
+      </div>
+      <div class="modal-actions">
+        <button (click)="submitPlanification()" class="btn-confirm">Confirmer la planification</button>
+        <button (click)="annuler()" class="btn-cancel">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de détails -->
+  <div class="modal-overlay" *ngIf="showDetails && selectedDemande">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Détails de la demande</h2>
+      </div>
+      <div class="modal-content">
+        <ul class="details-list">
+          <li><strong>ID:</strong> {{ selectedDemande.id }}</li>
+          <li><strong>Description complète:</strong> {{ selectedDemande.description }}</li>
+          <li><strong>Catégorie:</strong> {{ selectedDemande.category || 'N/A' }}</li>
+          <li><strong>Sous-catégorie:</strong> {{ selectedDemande.subCategory || 'N/A' }}</li>
+          <li><strong>Priorité:</strong> {{ selectedDemande.priority || 'N/A' }}</li>
+          <li><strong>Date et heure de soumission:</strong> {{ selectedDemande.dateSoumission | date:'medium' }}</li>
+          <li><strong>État:</strong> {{ selectedDemande.etat }}</li>
+          <li><strong>Localisation:</strong> {{ selectedDemande.localisation.latitude }}, {{ selectedDemande.localisation.longitude }} ({{ selectedDemande.localisation.address || 'N/A' }})</li>
+          <li><strong>Email de contact:</strong> {{ selectedDemande.contactEmail || 'N/A' }}</li>
+          <li><strong>Citoyen ID:</strong> {{ selectedDemande.citoyenId || 'N/A' }}</li>
+          <li><strong>Pièces jointes:</strong>
+            <ul *ngIf="selectedDemande.attachments && selectedDemande.attachments.length > 0; else noAttachments">
+              <li *ngFor="let attach of selectedDemande.attachments">{{ attach }}</li> <!-- IDs ou noms; implémentez fetch si besoin -->
+            </ul>
+            <ng-template #noAttachments>Aucune</ng-template>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-actions">
+        <button (click)="fermerDetails()" class="btn-close">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>

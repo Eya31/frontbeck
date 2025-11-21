@@ -1,0 +1,165 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.btn-refresh {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.btn-refresh:hover {
+  background-color: #2980b9;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #34495e;
+  color: white;
+}
+
+th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+td {
+  padding: 15px;
+  color: #555;
+}
+
+/* Badges pour priorité */
+.badge-urgent {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.badge-planned {
+  background-color: #f39c12;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.badge-default {
+  background-color: #95a5a6;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+/* Badges pour statut */
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-in-progress {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.status-completed {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-suspended {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.status-default {
+  color: #95a5a6;
+  font-weight: bold;
+}
+
+/* Boutons d'action */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-start,
+.btn-complete {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: background-color 0.2s;
+}
+
+.btn-start {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.btn-complete {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-complete:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.btn-start:disabled,
+.btn-complete:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}

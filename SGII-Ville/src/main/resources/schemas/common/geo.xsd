@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://example.com/gestion-interventions" 
+           xmlns:tns="http://example.com/gestion-interventions" 
+           elementFormDefault="qualified">
+
+  <!-- Type géographique -->
+  <xs:complexType name="GeoPointType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="latitude" type="xs:float" use="required"/>
+        <xs:attribute name="longitude" type="xs:float" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://example.com/gestion-interventions" 
+           xmlns:tns="http://example.com/gestion-interventions" 
+           elementFormDefault="qualified">
+
+  <!-- Notification -->
+  <xs:complexType name="NotificationType">
+    <xs:sequence>
+      <xs:element name="id_notification" type="xs:int"/>
+      <xs:element name="message" type="xs:string"/>
+      <xs:element name="created_at" type="xs:dateTime"/>
+      <xs:element name="user_id" type="xs:int"/>
+      <xs:element name="readable" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://example.com/gestion-interventions" 
+           xmlns:tns="http://example.com/gestion-interventions" 
+           elementFormDefault="qualified">
+
+  <!-- Types énumérés de base -->
+  
+  <xs:simpleType name="RoleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CITOYEN"/>
+      <xs:enumeration value="TECHNICIEN"/>
+      <xs:enumeration value="CHEF_SERVICE"/>
+      <xs:enumeration value="ADMINISTRATEUR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EtatDemandeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SOUMISE"/>
+      <xs:enumeration value="EN_ATTENTE"/>
+      <xs:enumeration value="TRAITEE"/>
+      <xs:enumeration value="REJETEE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EtatInterventionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EN_ATTENTE"/>
+      <xs:enumeration value="EN_COURS"/>
+      <xs:enumeration value="SUSPENDUE"/>
+      <xs:enumeration value="TERMINEE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PrioriteType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="URGENTE"/>
+      <xs:enumeration value="PLANIFIEE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EtatEquipementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FONCTIONNEL"/>
+      <xs:enumeration value="DEFECTUEUX"/>
+      <xs:enumeration value="EN_MAINTENANCE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EtatDemandeAjoutType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EN_ATTENTE_ADMIN"/>
+      <xs:enumeration value="ACCEPTEE"/>
+      <xs:enumeration value="REFUSEE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,26 @@
+<div class="technicien-dashboard">
+  <header>
+    <h1>Mes Interventions</h1>
+    <button class="btn-logout" (click)="logout()">Déconnexion</button>
+  </header>
+
+  <div class="interventions-grid">
+    <div *ngFor="let intervention of interventions" class="intervention-card">
+      <h3>Intervention #{{intervention.id}}</h3>
+      <p><strong>État:</strong> {{intervention.etat}}</p>
+      <p><strong>Priorité:</strong> {{intervention.priorite}}</p>
+      <p><strong>Date:</strong> {{intervention.datePlanifiee}}</p>
+      <p><strong>Budget:</strong> {{intervention.budget}} DT</p>
+      <button *ngIf="intervention.etat === 'EN_COURS'" 
+              class="btn-success" 
+              (click)="terminer(intervention.id)">
+        Marquer comme Terminé
+      </button>
+      <span *ngIf="intervention.etat === 'TERMINEE'" class="badge-completed">✓ Terminée</span>
+    </div>
+    
+    <div *ngIf="interventions.length === 0" class="empty-state">
+      <p>Aucune intervention assignée pour le moment</p>
+    </div>
+  </div>
+</div>

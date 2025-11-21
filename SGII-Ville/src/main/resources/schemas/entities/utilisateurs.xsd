@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://example.com/gestion-interventions" 
+           xmlns:tns="http://example.com/gestion-interventions" 
+           elementFormDefault="qualified">
+
+  <xs:include schemaLocation="../common/typesBase.xsd"/>
+  <xs:include schemaLocation="../common/contacts.xsd"/>
+
+  <!-- Utilisateurs -->
+  <xs:complexType name="UtilisateurType" abstract="true">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="email" type="tns:EmailType"/>
+      <xs:element name="motDePasse" type="xs:string"/>
+      <xs:element name="role" type="tns:RoleType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CitoyenType">
+    <xs:complexContent>
+      <xs:extension base="tns:UtilisateurType">
+        <xs:sequence>
+          <xs:element name="adresse" type="xs:string"/>
+          <xs:element name="telephone" type="tns:TelephoneType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TechnicienType">
+    <xs:complexContent>
+      <xs:extension base="tns:UtilisateurType">
+        <xs:sequence>
+          <xs:element name="competences" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="disponibilite" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ChefDeServiceType">
+    <xs:complexContent>
+      <xs:extension base="tns:UtilisateurType">
+        <xs:sequence>
+          <xs:element name="departement" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="AdministrateurType">
+    <xs:complexContent>
+      <xs:extension base="tns:UtilisateurType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

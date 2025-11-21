@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SystemeGestionInterventions xmlns="http://example.com/gestion-interventions">
+                
+    
+    
+    <Utilisateurs>
+                                
+        
+        
+        <!-- Exemple de citoyen -->
+                                
+        
+        
+        <Citoyen>
+                                                
+            
+            
+            <id>1</id>
+                                                
+            
+            
+            <nom>Ahmed Ben Ali</nom>
+                                                
+            
+            
+            <email>ahmed.benali@example.com</email>
+                                                
+            
+            
+            <motDePasse>password123</motDePasse>
+                                                
+            
+            
+            <role>CITOYEN</role>
+                                                
+            
+            
+            <adresse>12 Avenue Habib Bourguiba, Tunis</adresse>
+                                                
+            
+            
+            <telephone>12345678</telephone>
+                                            
+        
+        
+        </Citoyen>
+                                    
+        
+        
+        <!-- Admin par défaut -->
+                                
+        
+        
+        <Administrateur>
+                                                
+            
+            
+            <id>2</id>
+                                                
+            
+            
+            <nom>Admin Principal</nom>
+                                                
+            
+            
+            <email>admin@sgii.tn</email>
+                                                
+            
+            
+            <!-- Mot de passe: admin123 -->
+                                                
+            
+            
+            <motDePasse>$2a$10$YourValidBCryptHashHere</motDePasse>
+                                                
+            
+            
+            <role>ADMINISTRATEUR</role>
+                                            
+        
+        
+        </Administrateur>
+                                 
+        
+        
+        <Technicien>
+                                                
+            
+            
+            <id>3</id>
+                                                
+            
+            
+            <nom>Mohamed Technicien</nom>
+                                                
+            
+            
+            <email>tech@test.tn</email>
+                                                
+            
+            
+            <motDePasse>$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy</motDePasse>
+                                                
+            
+            
+            <role>TECHNICIEN</role>
+                                                
+            
+            
+            <competences>
+                                                                
+                
+                
+                <competences>Électricité</competences>
+                                                                
+                
+                
+                <competences>Plomberie</competences>
+                                                            
+            
+            
+            </competences>
+                                                
+            
+            
+            <disponibilite>true</disponibilite>
+                                            
+        
+        
+        </Technicien>
+                                
+    
+        
+        
+        <Administrateur>
+                                    
+            
+            <id>4</id>
+                                    
+            
+            <nom>eya</nom>
+                                    
+            
+            <email>eya@gmail.com</email>
+                                    
+            
+            <motDePasse>$2a$10$nBbrmynT8XRTbxM4V5byV.rAp101LNtiErRKU9TL.QYaXv1YMAguK</motDePasse>
+                                    
+            
+            <role>ADMINISTRATEUR</role>
+                                
+        
+        </Administrateur>
+                    
+        
+        <Citoyen>
+                        
+            <id>5</id>
+                        
+            <nom>citoyen </nom>
+                        
+            <email>citoyen@gmail.com</email>
+                        
+            <motDePasse>$2a$10$ny32NGsWvFLzq6q/F8gPy.bQ17zzkDTTPBzDxYrgK/MYlJrnOMtnK</motDePasse>
+                        
+            <role>CITOYEN</role>
+                        
+            <adresse>matar</adresse>
+                        
+            <telephone>25964613</telephone>
+                    
+        </Citoyen>
+            
+        <Citoyen>
+            <id>6</id>
+            <nom>eyacitoyen</nom>
+            <email>eyacitoyen@gmail.com</email>
+            <motDePasse>$2a$10$He7Oni/plPC6Cbfg9xvGzO.Dp8gsMoFt66xyqLxb1og7/jF42fhnO</motDePasse>
+            <role>CITOYEN</role>
+            <adresse>matar</adresse>
+            <telephone>95571012</telephone>
+        </Citoyen>
+    </Utilisateurs>
+                
+    
+    
+    
+    <Demandes/>
+                
+    
+    
+    <Interventions/>
+                
+    
+    
+    <Fournisseurs/>
+                
+    
+    
+    <Equipements/>
+                
+    
+    
+    <RessourcesMaterielles/>
+                
+    
+    
+    <MainDOeuvre/>
+                
+    
+    
+    <Notifications/>
+                
+    
+    
+    <DemandesAjout/>
+            
+
+
+</SystemeGestionInterventions>

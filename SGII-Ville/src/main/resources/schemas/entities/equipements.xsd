@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://example.com/gestion-interventions" 
+           xmlns:tns="http://example.com/gestion-interventions" 
+           elementFormDefault="qualified">
+
+  <xs:include schemaLocation="../common/typesBase.xsd"/>
+  <xs:include schemaLocation="../common/geo.xsd"/>
+  <xs:include schemaLocation="fournisseurs.xsd"/>
+
+  <!-- Equipement -->
+  <xs:complexType name="EquipementType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="etat" type="tns:EtatEquipementType"/>
+      <xs:element name="fournisseur" type="tns:FournisseurType"/>
+      <xs:element name="valeurAchat" type="xs:decimal"/>
+      <xs:element name="localisation" type="tns:GeoPointType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
